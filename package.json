@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config ./webpack/webpack.prod.js",
     "start": "webpack serve --config ./webpack/webpack.dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.20.0",
+    "gh-pages": "^4.0.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "portfinder-sync": "^0.0.2",
