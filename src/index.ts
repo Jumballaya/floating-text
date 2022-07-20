@@ -1,19 +1,20 @@
 import './styles/main.css';
-import GUI from 'lil-gui';
 import * as THREE from 'three';
 import { createFontMesh } from './createFontMesh';
 import { Scene } from './Scene';
 
 const textureLoader = new THREE.TextureLoader();
+const publicPath = process?.env?.PUBLIC_PATH || '/';
+console.log(process.env);
 const matcaps = {
-  Clay: textureLoader.load('/textures/matcaps/1.png'),
-  'Rough Metal': textureLoader.load('/textures/matcaps/2.png'),
-  'Shiny Metal': textureLoader.load('/textures/matcaps/3.png'),
-  'Rough Copper': textureLoader.load('/textures/matcaps/4.png'),
-  'Shiny Copper': textureLoader.load('/textures/matcaps/5.png'),
-  Taffy: textureLoader.load('/textures/matcaps/6.png'),
-  Slime: textureLoader.load('/textures/matcaps/7.png'),
-  Chromatic: textureLoader.load('/textures/matcaps/8.png'),
+  Clay: textureLoader.load(`${publicPath}textures/matcaps/1.png`),
+  'Rough Metal': textureLoader.load(`${publicPath}textures/matcaps/2.png`),
+  'Shiny Metal': textureLoader.load(`${publicPath}textures/matcaps/3.png`),
+  'Rough Copper': textureLoader.load(`${publicPath}textures/matcaps/4.png`),
+  'Shiny Copper': textureLoader.load(`${publicPath}textures/matcaps/5.png`),
+  Taffy: textureLoader.load(`${publicPath}textures/matcaps/6.png`),
+  Slime: textureLoader.load(`${publicPath}textures/matcaps/7.png`),
+  Chromatic: textureLoader.load(`${publicPath}textures/matcaps/8.png`),
 };
 
 // Set up canvas
@@ -35,7 +36,7 @@ const createText = async (
 ): Promise<THREE.Mesh> => {
   const font = await createFontMesh(
     text,
-    '/fonts/helvetiker_regular.typeface.json',
+    `${publicPath}fonts/helvetiker_regular.typeface.json`,
     material,
   );
   return font;

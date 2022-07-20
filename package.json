@@ -18,6 +18,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "dotenv": "^16.0.1",
     "eslint": "^8.20.0",
     "gh-pages": "^4.0.0",
     "html-loader": "^4.1.0",
